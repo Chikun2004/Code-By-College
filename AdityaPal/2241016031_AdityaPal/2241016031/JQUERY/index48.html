@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#h1").hover(function () {
+          $("div").first().css("color", "green");
+        });
+        $("#h2").hover(function () {
+          $("div").last().css("color", "green");
+        });
+        $("#d1").click(function () {
+          if ($("#txt1").val() == 2) {
+            $("#p1").css("color", "blue");
+          }
+        });
+        $("#d1").click(function () {
+          if ($("#txt1").val() == 3) {
+            $("#p2").css("color", "red");
+          }
+        });
+        $("#d1").click(function () {
+          if ($("#txt1").val() == 4) $("#p3").css("color", "brown");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="h1">Hii</div>
+    <div id="p1">This is Aditya</div>
+    <div id="p2">CSE</div>
+    <div id="p3">SOAITER</div>
+    <textarea id="txt1"></textarea>
+    <button id="d1">GO</button>
+  </body>
+</html>

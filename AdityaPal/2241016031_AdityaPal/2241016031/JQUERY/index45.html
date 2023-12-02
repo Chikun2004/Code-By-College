@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Traversal Functions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <div class="box">Box 4</div>
+    <div class="box">Box 5</div>
+
+    <button id="siblingsBtn">Siblings</button>
+    <button id="nextBtn">Next</button>
+    <button id="nextAllBtn">Next All</button>
+    <button id="nextUntilBtn">Next Until</button>
+    <button id="prevBtn">Prev</button>
+    <button id="prevAllBtn">Prev All</button>
+    <button id="prevUntilBtn">Prev Until</button>
+
+    <div id="result"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#siblingsBtn").click(function () {
+          var siblings = $(".box").siblings();
+          $("#result").text("Siblings: " + siblings.length);
+        });
+
+        $("#nextBtn").click(function () {
+          var nextElement = $(".box").next();
+          $("#result").text("Next Element: " + nextElement.text());
+        });
+
+        $("#nextAllBtn").click(function () {
+          var nextAllElements = $(".box").nextAll();
+          var text = "Next All Elements: ";
+          nextAllElements.each(function () {
+            text += $(this).text() + " ";
+          });
+          $("#result").text(text);
+        });
+
+        $("#nextUntilBtn").click(function () {
+          var nextUntilElements = $(".box").nextUntil(".box:nth-child(3)");
+          var text = "Next Until Element: ";
+          nextUntilElements.each(function () {
+            text += $(this).text() + " ";
+          });
+          $("#result").text(text);
+        });
+
+        $("#prevBtn").click(function () {
+          var prevElement = $(".box").prev();
+          $("#result").text("Previous Element: " + prevElement.text());
+        });
+
+        $("#prevAllBtn").click(function () {
+          var prevAllElements = $(".box").prevAll();
+          var text = "Previous All Elements: ";
+          prevAllElements.each(function () {
+            text += $(this).text() + " ";
+          });
+          $("#result").text(text);
+        });
+
+        $("#prevUntilBtn").click(function () {
+          var prevUntilElements = $(".box").prevUntil(".box:nth-child(3)");
+          var text = "Previous Until Element: ";
+          prevUntilElements.each(function () {
+            text += $(this).text() + " ";
+          });
+          $("#result").text(text);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOMEPAGE</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#h1").hover(function () {
+          $("div").first().css("color", "green");
+        });
+        $("#h2").hover(function () {
+          $("div").last().css("color", "green");
+        });
+        $("#d1").click(function () {
+          var inputVal = $("#txt1").val();
+
+          if (!isNaN(inputVal) && inputVal !== "") {
+            var divIndex = parseInt(inputVal, 10) - 1;
+
+            if (divIndex >= 0 && divIndex < $("div").length) {
+              $("div").eq(divIndex).css("color", "blue");
+            } else {
+              alert("Invalid input. Please enter a valid index.");
+            }
+          } else {
+            alert("Invalid input. Please enter a valid number.");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="h1">Hii</div>
+    <div id="p1">This is Aditya</div>
+    <div id="p2">CSE</div>
+    <div id="p3">SOAITER</div>
+    <textarea id="txt1"></textarea>
+    <button id="d1">GO</button>
+  </body>
+</html>

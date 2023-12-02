@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery DOM Traversal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#parentButton").click(function () {
+          $("#parentDiv").parent().css("background-color", "lightblue");
+        });
+
+        $("#parentsButton").click(function () {
+          $("#parentsDiv").parents().css("background-color", "lightgreen");
+        });
+
+        $("#parentsUntilButton").click(function () {
+          $("#parentsUntilDiv")
+            .parentsUntil("#parentsUntilContainer")
+            .css("background-color", "lightcoral");
+        });
+
+        $("#childrenButton").click(function () {
+          $("#childrenDiv").children().css("color", "red");
+        });
+
+        $("#findButton").click(function () {
+          $("#findDiv").find("span").css("font-weight", "bold");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="parentDiv">
+      <button id="parentButton">Parent</button>
+    </div>
+    <div id="parentsDiv">
+      <div>
+        <div>
+          <button id="parentsButton">Parents</button>
+        </div>
+      </div>
+    </div>
+    <div id="parentsUntilContainer">
+      <div id="parentsUntilDiv">
+        <button id="parentsUntilButton">ParentsUntil</button>
+      </div>
+    </div>
+    <div id="childrenDiv">
+      <button id="childrenButton">Children</button>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </div>
+    <div id="findDiv">
+      <button id="findButton">Find</button>
+      <div>
+        <span>Target</span>
+      </div>
+    </div>
+  </body>
+</html>

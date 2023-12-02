@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <style>
+        a:link, a:visited {
+                    background-color: dodgerblue;
+                    color: hotpink;
+                    padding: 10px 20px;
+                    text-align: left;
+                    display: inline-block;
+                    }
+        a:hover, a:active {
+                    background-color: GREEN;
+                    }
+        /* a:link {
+            color: blue;
+        }
+        a:visited{
+            color:red;
+        }
+        a:hover{
+            color:greenyellow;
+        }
+        a:active{
+            color:brown;
+        } */
+    </style>
+</head>
+<body>
+    <p>
+        <b><a href="https://www.google.com" target="_blank">Click Here</a></b>
+    </p>
+    <p>
+       <b><a href="https://www.amazon.in/" target="_self">Amazon</a></b>
+    </p>
+    <p>
+        <b><a href="https://www.netflix.com/in/">CLICK HERE</a></b>
+    </p>
+    <p>
+        <b>Reminder:</b> a:hover cannot come before a:link and a:visited in
+        CSS for complete proper working.
+    </p>
+    <p>
+        <b>Reminder:</b> a:active must follow a:hover property in CSS for
+        complete working.
+    </p>
+</body>
+</html>

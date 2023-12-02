@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q6</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+      tr,
+      td,
+      table {
+        border: 1px solid black;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tb">
+      <tr>
+        <td>Hello World!!</td>
+      </tr>
+    </table>
+    <button id="btn1">Add</button>
+    <button id="btn2">Change Color</button>
+    <br />
+    <input type="text" name="id-delete" id="id-delete" />
+    <button id="btn3">Delete Row</button>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          $("#tb").append("<tr>" + "<td> Another nice row</td>" + "<tr/>");
+        });
+        $("#btn2").click(function () {
+          $("#tb").css("color", "red");
+        });
+      });
+    </script>
+  </body>
+</html>

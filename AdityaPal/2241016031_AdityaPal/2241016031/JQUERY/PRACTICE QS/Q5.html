@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Q5</title>
+    <style>
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #ccc;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #ddd;
+      }
+      .div-demo {
+        background-color: #f0f0f0;
+        width: 200px;
+        height: 200px;
+        display: none;
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
+    </style>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // SlideDown
+        $("button.slideDown").click(function () {
+          $("div.div-demo").slideDown("slow");
+        });
+
+        // Animate
+        $("button.animate").click(function () {
+          $("div.div-demo").animate({ left: "850px" });
+        });
+
+        // FadeIn
+        $("button.fadeIn").click(function () {
+          $("div.div-demo").fadeIn("slow");
+        });
+
+        // Hide
+        $("button.hide").click(function () {
+          $("div.div-demo").hide("slow");
+        });
+
+        // Show
+        $("button.show").click(function () {
+          $("div.div-demo").show("slow");
+        });
+
+        // Mouse Enter
+        $("button.mouseenter").mouseenter(function () {
+          $(this).css("background-color", "red");
+        });
+
+        // Double Click
+        $("button.dblclick").dblclick(function () {
+          $(this).css("background-color", "blue");
+        });
+
+        // Mouse Leave
+        $("button.mouseleave").mouseleave(function () {
+          $(this).css("background-color", "orange");
+        });
+
+        // Get Attribute
+        $("button.attr").click(function () {
+          alert($("div.div-demo").attr("id"));
+        });
+
+        // Change HTML
+        $("button.html").click(function () {
+          $("div.div-demo").html("<strong>Hello jQuery!</strong>");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button class="slideDown">Slide Down</button>
+    <button class="animate">Animate</button>
+    <button class="fadeIn">Fade In</button>
+    <button class="hide">Hide</button>
+    <button class="show">Show</button>
+    <button class="mouseenter">Mouse Enter</button>
+    <button class="dblclick">Double Click</button>
+    <button class="mouseleave">Mouse Leave</button>
+    <button class="attr">Get Attribute</button>
+    <button class="html">Change HTML</button>
+
+    <div class="div-demo">Hello World!</div>
+  </body>
+</html>

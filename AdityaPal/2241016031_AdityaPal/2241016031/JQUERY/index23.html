@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+                    $(document).ready(function()){
+                      $("#b1").click(function(){
+      		$("#par1").text("Hi User!");
+      });
+      $("#b2").click(function(){
+      		$("#par2").html("<b>Hi User!</b>");
+      });
+      $("#b3").click(function(){
+      		$("#par3").val("Shane");
+      });
+      });
+    </script>
+  </head>
+  <body>
+    <p id="“par1”">This is our first paragraph.</p>
+    <p id="“par2”">This is our second paragraph.</p>
+    <p>Input field: <input type="“text”" id="“par3”" value="“Rick”" /></p>
+    <button id="“b1”">Setting any textual information</button>
+    <button id="“b2”">Setting any HTML data</button>
+    <button id="“b3”">Setting any value</button>
+  </body>
+</html>

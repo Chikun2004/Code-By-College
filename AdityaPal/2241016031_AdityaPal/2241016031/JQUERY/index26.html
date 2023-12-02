@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Editor</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#t1").click(function () {
+          $("#t1").html($("#tx").val());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>Code Editor:</p>
+      <textarea id="tx"></textarea>
+      <button id="t1">Run</button>
+    </div>
+  </body>
+</html>

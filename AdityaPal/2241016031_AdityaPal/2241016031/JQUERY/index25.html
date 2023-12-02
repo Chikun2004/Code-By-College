@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CODE EDITOR</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/javascript/javascript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Simple Code Editor</h1>
+    <textarea id="code" rows="10" cols="40">// Type your code here</textarea>
+    <button id="runButton">Run</button>
+    <h2>Output:</h2>
+    <div id="output"></div>
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "javascript",
+      });
+      $("#runButton").click(function () {
+        $("#output").empty();
+        var code = editor.getValue();
+        try {
+          var result = eval(code);
+
+          $("#output").text(result);
+        } catch (error) {
+          $("#output").text("Error: " + error.message);
+        }
+      });
+    </script>
+  </body>
+</html>

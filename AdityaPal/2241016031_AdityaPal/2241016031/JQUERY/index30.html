@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Append and Remove with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      $(document).ready(function () {
+        var counter = 0;
+
+        function appendDiv() {
+          var $div = $("<div>Appended " + counter + "</div>");
+          $("#container").append($div);
+          counter++;
+          if (counter === 10) {
+            $("#container div:first").remove();
+          }
+        }
+        $("#appendButton").on("click", appendDiv);
+      });
+    </script>
+
+    <button id="appendButton">Append a div</button>
+  </body>
+</html>

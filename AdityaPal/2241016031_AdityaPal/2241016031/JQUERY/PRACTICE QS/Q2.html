@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q2</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <p>Click me!</p>
+    <script>
+      $(document).ready(function () {
+        $("p").click(function () {
+          alert("SINGLE CLICKED!!");
+        }),
+          $("p").dblclick(function () {
+            alert("DOUBLE CLICKED!!");
+          });
+      });
+    </script>
+  </body>
+</html>

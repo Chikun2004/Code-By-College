@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Divs</title>
+    <style>
+      .animated-div {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        display: inline-block;
+        background-color: #3498db;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animated-div"></div>
+    <div class="animated-div"></div>
+    <div class="animated-div"></div>
+    <div class="animated-div"></div>
+    <div class="animated-div"></div>
+    <div class="animated-div"></div>
+
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".animated-div").hover(
+          function () {
+            $(this).css("opacity", 0.5);
+          },
+          function () {
+            $(this).css("opacity", 1);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

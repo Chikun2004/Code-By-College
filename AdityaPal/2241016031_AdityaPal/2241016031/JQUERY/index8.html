@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          var div = $("div");
+          div.animate({ height: "50px", opacity: "0.3" }, "slow");
+          div.animate({ width: "300px", opacity: "0.7" }, "fast");
+          div.animate({ height: "50px", opacity: "0.3" }, "fast");
+          div.animate({ width: "300px", opacity: "0.7" }, "slow");
+          div.animate({ fontSize: "2em" }, "slow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Start Animation</button>
+    <div
+      style="
+        background: dodgerblue;
+        height: 50px;
+        width: 50px;
+        position: absolute;
+      "></div>
+      </div>
+  </body>
+</html>

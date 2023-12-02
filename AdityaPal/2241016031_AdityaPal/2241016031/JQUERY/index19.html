@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .animated-div {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin: 10px;
+        display: inline-block;
+        animation: scaleAnimation 2s ease-in-out forwards;
+      }
+
+      @keyframes scaleAnimation {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(2);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animated-div"></div>
+    <div class="animated-div"></div>
+    <div class="animated-div"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var totalDivs = $(".animated-div").length;
+        var completedAnimations = 0;
+
+        $(".animated-div").on("animationend", function () {
+          completedAnimations++;
+
+          if (completedAnimations === totalDivs) {
+            alert("All animations are complete!");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voter Eligibility Check</title>
+    <style>
+      .eligible {
+        color: green;
+        font-weight: bold;
+      }
+
+      .ineligible {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Voter Eligibility Check</h1>
+    <p>Enter your age: <input type="number" id="age" min="0" /></p>
+    <button id="checkEligibility">Check Eligibility</button>
+    <p id="result">Eligibility status will be displayed here.</p>
+
+    <script>
+      $(document).ready(function () {
+        $("#checkEligibility").click(function () {
+          var age = parseInt($("#age").val());
+          var resultMessage = $("#result");
+
+          if (age >= 18) {
+            resultMessage.text("You are eligible to vote.");
+            resultMessage.addClass("eligible");
+            resultMessage.removeClass("ineligible");
+          } else {
+            resultMessage.text("You are not eligible to vote.");
+            resultMessage.addClass("ineligible");
+            resultMessage.removeClass("eligible");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

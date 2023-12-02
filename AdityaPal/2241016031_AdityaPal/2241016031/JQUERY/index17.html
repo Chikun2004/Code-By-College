@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Divs</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        margin: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+    <div class="box" id="box6"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Animation for box 1
+        $("#box1").animate({ left: "200px" }, 2000);
+
+        // Animation for box 2
+        $("#box2").animate({ top: "200px" }, 2000);
+
+        // Animation for box 3
+        $("#box3").animate({ width: "200px" }, 2000);
+
+        // Animation for box 4
+        $("#box4").animate({ opacity: 0 }, 2000);
+
+        // Animation for box 5
+        $("#box5").animate({ fontSize: "24px" }, 2000);
+
+        // Animation for box 6
+        $("#box6").animate({ borderRadius: "50%" }, 2000);
+      });
+    </script>
+  </body>
+</html>

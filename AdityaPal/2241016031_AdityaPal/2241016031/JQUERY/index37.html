@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Color Changer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #color-box {
+        width: 300px;
+        height: 300px;
+        background-color: #ffffff;
+        border: 2px solid #000;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      #controls {
+        text-align: center;
+        margin: 20px;
+      }
+
+      button {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="color-box">
+      <h1>Background Color Changer</h1>
+    </div>
+    <div id="controls">
+      <button id="red">Red</button>
+      <button id="green">Green</button>
+      <button id="blue">Blue</button>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#red").click(function () {
+          $("#color-box").css({ backgroundColor: "red" });
+        });
+
+        $("#green").click(function () {
+          $("#color-box").css("background-color", "green");
+        });
+
+        $("#blue").click(function () {
+          $("#color-box").css("background-color", "blue");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HOMEPAGE</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px;
+        display: inline-block;
+      }
+
+      textarea {
+        width: 80px;
+        height: 30px;
+      }
+
+      button {
+        display: block;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="div1"></div>
+    <div class="box" id="div2">
+      <textarea id="input1"></textarea>
+      <button id="button1">Change Color</button>
+    </div>
+    <div class="box" id="div3">
+      <textarea id="input2"></textarea>
+      <button id="button2">Change Color</button>
+    </div>
+    <div class="box" id="div4">
+      <textarea id="input3"></textarea>
+      <button id="button3">Change Color</button>
+    </div>
+    <div class="box" id="div5"></div>
+    <script>
+      $(document).ready(function () {
+        $("#div1, #div5").mouseenter(function () {
+          $(this).css("background-color", "lightgreen");
+        });
+
+        $("#div1, #div5").mouseleave(function () {
+          $(this).css("background-color", "lightblue");
+        });
+
+        $("#button1, #button2, #button3").click(function () {
+          var buttonId = $(this).attr("id").slice(-1);
+          var inputId = "#input" + buttonId;
+          var divId = "#div" + buttonId;
+          var color = $(inputId).val();
+
+          if (isValidColor(color)) {
+            $(divId).css("background-color", color);
+          } else {
+            alert("Invalid color entered!");
+          }
+        });
+
+        function isValidColor(color) {
+          return (
+            /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color) ||
+            /([a-zA-Z])\w+/.test(color)
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom mapulation</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#b1").click(function () {
+          alert("Text: " + $("#par").text());
+        });
+        $("#b2").click(function () {
+          alert("HTML: " + $("#par").html());
+        });
+        $("#button1").click(function () {
+          alert("Value: " + $("#txt").val());
+        });
+        $("button").click(function () {
+          alert($("#go").attr("href"));
+        });
+        $("#btn1").click(function () {
+          $("#test1").text("Hii User!");
+        });
+        $("#btn2").click(function () {
+          $("#test2").html("<b>Hello!</b>");
+        });
+        $("#btn3").click(function () {
+          $("#test3").val("ROAST PAPAD");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p id="par">HII,This is Aditya<b> contains bold text.</b></p>
+    <button id="b1">Display Text</button>
+    <button id="b2">Display HTML code</button>
+    <p>Username: <input type="text" id="txt" value="HII.." /></p>
+    <button id="button1">Check the Value</button>
+    <p><a href="https://www.amazon.com" id="go">Amazon.com</a></p>
+    <button>Show href Value</button>
+    <hr />
+    <p id="test1">This is the university named SOA</p>
+    <p id="test2">Hii my name is Aditya</p>
+    <p>Input field: <input type="text" id="test3" value="Mickey" /></p>
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set Value</button>
+  </body>
+</html>

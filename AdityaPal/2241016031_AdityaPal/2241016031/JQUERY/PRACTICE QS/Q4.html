@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q4 Popup Box</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <style>
+      #popup {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      #popup:target {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="location.href='#popup'">Show Popup</button>
+    <div id="popup">
+      <a href="#" onclick="window.history.back();">&times;</a>
+      <p>Hello, I'm a popup box!</p>
+    </div>
+  </body>
+</html>

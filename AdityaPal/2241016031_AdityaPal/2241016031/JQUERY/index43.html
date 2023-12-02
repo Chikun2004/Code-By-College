@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery DOM Traversal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="grandparent">
+      <div class="parent">
+        <div class="child">
+          <button id="parentButton">Parent</button>
+          <button id="parentsButton">Parents</button>
+          <button id="parentsUntilButton">Parents Until</button>
+          <button id="childrenButton">Children</button>
+          <button id="findButton">Find</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#parentButton").click(function () {
+          const parentElement = $(".child").parent();
+          alert("Parent: " + parentElement.attr("class"));
+        });
+
+        $("#parentsButton").click(function () {
+          const parentElements = $(".child").parents();
+          const parentClasses = parentElements
+            .map(function () {
+              return $(this).attr("class");
+            })
+            .get();
+          alert("Parents: " + parentClasses.join(", "));
+        });
+
+        $("#parentsUntilButton").click(function () {
+          const parentElements = $(".child").parentsUntil(".grandparent");
+          const parentClasses = parentElements
+            .map(function () {
+              return $(this).attr("class");
+            })
+            .get();
+          alert("Parents Until: " + parentClasses.join(", "));
+        });
+
+        $("#childrenButton").click(function () {
+          const childElements = $(".parent").children();
+          const childClasses = childElements
+            .map(function () {
+              return $(this).attr("class");
+            })
+            .get();
+          alert("Children: " + childClasses.join(", "));
+        });
+
+        $("#findButton").click(function () {
+          const foundElement = $(".parent").find(".child");
+          alert("Find: " + foundElement.attr("class"));
+        });
+      });
+    </script>
+  </body>
+</html>

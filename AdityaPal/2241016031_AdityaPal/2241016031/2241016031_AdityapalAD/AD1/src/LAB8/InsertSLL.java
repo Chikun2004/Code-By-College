@@ -1,0 +1,83 @@
+package LAB8;
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class SinglyLinkedList {
+    Node head;
+
+    public void insertAtStart(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
+    public void insertAtEnd(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+    }
+
+    public void insertAtMiddle(int data, int position) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            System.out.println("The linked list is empty");
+            return;
+        }
+
+        Node temp = head;
+        for (int i = 0; i < position - 1; i++) {
+            temp = temp.next;
+            if (temp == null) {
+                System.out.println("The position does not exist");
+                return;
+            }
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
+    public void printLinkedList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+
+public class InsertSLL {
+    public static void main(String[] args) {
+    	SinglyLinkedList sll = new SinglyLinkedList();
+
+        sll.insertAtStart(1);
+        sll.insertAtStart(2);
+        sll.insertAtStart(3);
+
+        sll.insertAtEnd(4);
+        sll.insertAtEnd(5);
+
+        sll.insertAtMiddle(6, 3);
+
+        sll.printLinkedList();
+    }
+}

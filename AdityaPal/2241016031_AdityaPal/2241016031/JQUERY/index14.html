@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate Pages</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      .animated {
+        height: 200px;
+        margin: 10px 0;
+        background: url("octopus.jpg") no-repeat left center #e4eacf;
+        -webkit-animation: test 4s infinite;
+        animation: test 4s infinite;
+      }
+
+      @-webkit-keyframes test {
+        50% {
+          background-position: right center;
+        }
+      }
+      @keyframes test {
+        50% {
+          background-position: right center;
+        }
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".play-animation").click(function () {
+          $(".animated").css("animation-play-state", "running");
+        });
+        $(".stop-animation").click(function () {
+          $(".animated").css("animation-play-state", "paused");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="animated"></div>
+    <button type="button" class="play-animation">Play Animation</button>
+    <button type="button" class="stop-animation">Stop Animation</button>
+  </body>
+</html>

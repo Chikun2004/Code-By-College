@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Divs</title>
+    <style>
+      .animated-div {
+        width: 50px;
+        height: 50px;
+        background-color: #3498db;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="start">Start Animation</button>
+      <button id="stop">Stop Animation</button>
+      <button id="restart">Restart Animation</button>
+      <div id="alert" style="display: none">Animation Completed!</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let animationInterval;
+        let animatedDivs = [];
+        let container = $(".container");
+        let alertDiv = $("#alert");
+
+        function createDiv() {
+          const newDiv = $('<div class="animated-div"></div>');
+          container.append(newDiv);
+          animatedDivs.push(newDiv);
+          return newDiv;
+        }
+
+        function animateDivs() {
+          animationInterval = setInterval(function () {
+            animatedDivs.forEach(function (div) {
+              const leftPosition = Math.random() * (container.width() - 50);
+              const topPosition = Math.random() * (container.height() - 50);
+              div.animate(
+                {
+                  left: leftPosition,
+                  top: topPosition,
+                },
+                1000
+              );
+            });
+          }, 1000);
+        }
+
+        $("#start").on("click", function () {
+          createDiv();
+          animateDivs();
+        });
+
+        $("#stop").on("click", function () {
+          clearInterval(animationInterval);
+        });
+
+        $("#restart").on("click", function () {
+          clearInterval(animationInterval);
+          animatedDivs.forEach(function (div) {
+            div.stop(true, true);
+          });
+          animateDivs();
+        });
+
+        animatedDivs.forEach(function (div) {
+          div.on("animationend", function () {
+            if (animatedDivs.every((d) => !d.is(":animated"))) {
+              alertDiv.show().delay(2000).fadeOut();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

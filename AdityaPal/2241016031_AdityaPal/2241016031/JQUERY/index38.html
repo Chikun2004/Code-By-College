@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Traversing Mini Project</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Button Actions</h1>
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <button id="btn3">Button 3</button>
+    <button id="btn4">Button 4</button>
+    <button id="btn5">Button 5</button>
+
+    <div id="output"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          var buttonId = $(this).attr("id");
+          $("#output").text("Clicked: " + buttonId);
+        });
+
+        $("#btn1").next().css("background-color", "yellow");
+
+        $("#btn3").prev().css("background-color", "red");
+
+        $("#btn4").parent().css("border", "2px solid green");
+
+        $("#btn2").children().css("color", "blue");
+
+        $("button:not(#btn5)").css("font-weight", "bold");
+      });
+    </script>
+  </body>
+</html>

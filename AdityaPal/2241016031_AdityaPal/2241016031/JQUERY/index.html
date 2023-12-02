@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jquery</title>
+    <script src="./code.jquery.com_jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      $(document).ready(function () {
+        $("p").dblclick(function () {
+          alert("the paragraph was double clicked.");
+        });
+        $("p").mouseenter(function () {
+          $("p").css("background-color", "yellow");
+        });
+        $("p").mouseleave(function () {
+          $("p").css("background-color", "blue");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+  </body>
+</html>

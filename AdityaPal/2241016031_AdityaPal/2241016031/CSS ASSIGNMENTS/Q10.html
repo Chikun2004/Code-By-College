@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOA REGISTRATION</title>
+    <style>
+        #form {
+        margin-left: 35rem;
+        margin-top: 10rem;
+        background-color: lightblue;
+        width: 17rem;
+        }
+        input {
+        border: 2px solid blue;
+        }
+        input[type=text] {
+        width: 50%;
+        margin-left: 2rem;
+        box-sizing: border-box;
+        }
+        input[type=email] {
+        width: 50%;
+        margin-left: 2rem;
+        box-sizing: border-box;
+        position: relative;
+        left: 2.5rem;
+        }
+        input[type=mobile] {
+        width: 50%;
+        margin-left: 2rem;
+        box-sizing: border-box;
+        position: relative;
+        left: 2rem;
+        }
+        input[type=password] {
+        width: 50%;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        box-sizing: border-box;
+        position: relative;
+        left: 2rem;
+        }
+        label[for=gender] {
+        margin-left: 4rem;
+        }
+        #radio {
+        position: relative;
+        top: 1rem;
+        }
+        #city {
+        margin-top: 2rem;
+        }
+        select {
+        width: 50%;
+        margin-left: 5rem;
+        }
+        button {
+        width: 30%;
+        padding: 0.5rem;
+        margin-top: 2rem;
+        margin-left: 6rem;
+        background-color: orange;
+        }
+        #img img {
+        height: 5rem;
+        width: 5rem;
+        margin-left: 6rem;
+        margin-bottom: 2rem;
+        }
+        </style>
+        </head>
+        <body>
+        <div id="form">
+        <div id="img">
+        <img src="SOA-PNG.png" alt="photo">
+        </div>
+        <h1>REGISTRATION FORM</h1><hr/>
+        <div id="text">
+        <label for="text">
+        UserName
+        <input type="text">
+        </label>
+        </div>
+        <br>
+        <div id="pwd">
+        <label for="pwd">
+        Email
+        <input type="email">
+        </label>
+        </div>
+        <br>
+        <div id="phone">
+        <label for="phone">
+        Mobile
+        <input type="mobile">
+        </label>
+        </div>
+        <div id="radio">
+        Gender
+        <label for="gender">
+        Male
+        <input type="Radio" name="gender">
+        Female
+        <input type="Radio" name="gender">
+        </label>
+        </div>
+        <div id="city">
+        City
+        <select>
+        <option value="default">Select</option>
+        <option value="default">Cuttack</option>
+        <option value="default">Bhubaneswar</option>
+        <option value="default">Bhadrak</option>
+        </select>
+        </div>
+        <div id="pwd">
+        <label for="pwd">
+        Password
+        <input type="password" name="pwd">
+        </label>
+        </div>
+        <button action="/action_page.php">Sign Up</button>
+        </div>
+        </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $("div").animate({
+            left: "250px",
+            opacity: "0.3",
+            height: "150px",
+            width: "toggle",
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Start Animation</button>
+    <div
+      style="
+        background-color: cyan;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+      "
+    ></div>
+    <div
+      style="
+        background-color: greenyellow;
+        height: 80px;
+        width: 100px;
+        position: absolute;
+      "
+    ></div>
+    <div
+      style="
+        background-color: rgb(29, 18, 1);
+        height: 200px;
+        width: 200px;
+        position: absolute;
+      "
+    ></div>
+  </body>
+</html>

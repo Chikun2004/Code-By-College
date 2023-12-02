@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q5</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav {
+        width: 300px;
+        position: sticky;
+        top: 0;
+        left: 0;
+        background: #000;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .nav a {
+        color: #fff;
+        text-decoration: none;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        font-size: 22px;
+        display: block;
+        width: 75%;
+        padding: 15px;
+        margin-bottom: 5px;
+        border: 1px solid #3a3a3a;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+      }
+      .nav ul {
+        list-style: none;
+        padding: 20px;
+        width: 100%;
+      }
+      .nav ul li > a::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: #fff;
+        mix-blend-mode: difference;
+        transition: all 1s ease;
+      }
+      .nav ul li > a:hover:after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var count = 0;
+        $("#h1").click(function () {
+          $("#h1").append("APPEND");
+          if (count >= 10) {
+            $("#h3").remove();
+          }
+          count++;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="h3">
+      <p id="h1">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic asperiores
+        fugit praesentium omnis iusto inventore vel animi esse excepturi?
+      </p>
+    </div>
+    <div id="h2"></div>
+  </body>
+</html>
